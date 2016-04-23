@@ -63,7 +63,7 @@ ParseRequest.postData = function() {
       e.preventDefault();
     });
   });
-  XHR.POST('/parse/classes/GameScore');
+  XHR.POST('/parse/classes/test');
 }
 
 ParseRequest.getData = function() {
@@ -79,7 +79,7 @@ ParseRequest.getData = function() {
       e.preventDefault();
     })
   });
-  XHR.GET('/parse/classes/GameScore');
+  XHR.GET('/parse/classes/test');
 }
 
 ParseRequest.postCloudCodeData = function() {
@@ -130,8 +130,15 @@ XHR.setCallback = function(callback) {
   };
 }
 
+  var seed = {
+    "id":"fakeID-3482",
+    "account":{
+      "name":"mpkliewer",
+      "page":"heroku.com"
+    }
+  }
+
 XHR.POST = function(path, callback) {
-  var seed = {"score":1337,"playerName":"Sean Plott","cheatMode":false}
   this.xhttp.open("POST", Config.getUrl() + path, true);
   this.xhttp.setRequestHeader("X-Parse-Application-Id", "629bf32a-08e4-11e6-b512-3e1d05defe78");
   this.xhttp.setRequestHeader("Content-type", "application/json");
